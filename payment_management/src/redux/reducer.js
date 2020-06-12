@@ -1,12 +1,12 @@
 import { ADD_USER, ADD_CATEGORY } from "./actionType";
 
 const initState = {
-  users: ["ashok", "kiran"],
-  category: ["food", "room"]
+  users: [],
+  category: []
 };
 
 const reducer = (state = initState, { type, payload }) => {
-  console.log(state);
+  console.log(state, "use");
   switch (type) {
     case ADD_USER:
       return {

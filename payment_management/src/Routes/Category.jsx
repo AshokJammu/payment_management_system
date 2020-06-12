@@ -23,18 +23,33 @@ export class Category extends React.Component {
           placeholder="categoryName"
           onChange={e => this.setState({ categoryName: e.target.value })}
         />
-
         <br />
-        <button style={{ padding: 10 }} onClick={() => addCategory(this.state)}>
-          AddProduct
+        <br />
+        <button
+          className="btn btn-dark"
+          style={{ padding: 10 }}
+          onClick={() => addCategory(this.state)}
+        >
+          ADDCATEGORY
         </button>
 
         <div style={{ marginTop: 30 }}>
-          {category?.map(item => (
+          {/* {category?.map(item => (
             <div key={uuidv4()}>
               {item.categoryName}
               {console.log(item.categoryName)}
             </div>
+          ))} */}
+        </div>
+
+        <div className="card">
+          <div className="card-header">CategoryList</div>
+          {category?.map(item => (
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item font-weight-bold" key={uuidv4()}>
+                {item.categoryName}
+              </li>
+            </ul>
           ))}
         </div>
       </div>

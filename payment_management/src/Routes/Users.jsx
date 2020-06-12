@@ -23,16 +23,31 @@ export class Users extends React.Component {
           placeholder="username"
           onChange={e => this.setState({ userName: e.target.value })}
         />
-
         <br />
-        <button style={{ padding: 10 }} onClick={() => addUser(this.state)}>
+        <br />
+        <button
+          className="btn btn-dark"
+          style={{ padding: 10 }}
+          onClick={() => addUser(this.state)}
+        >
           AddProduct
         </button>
 
         <div style={{ marginTop: 30 }}>
-          LIST OF USERs:
+          {/* LIST OF USERs:
           {users &&
-            users.map(item => <div key={uuidv4()}>{item.userName}</div>)}
+            users.map(item => <div key={uuidv4()}>{item.userName}</div>)} */}
+        </div>
+
+        <div className="card">
+          <div className="card-header">UserList</div>
+          {users?.map(item => (
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item font-weight-bold" key={uuidv4()}>
+                {item.userName}
+              </li>
+            </ul>
+          ))}
         </div>
       </div>
     );

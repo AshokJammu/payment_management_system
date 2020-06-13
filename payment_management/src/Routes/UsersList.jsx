@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import AddTransaction from "../components/AddTransaction.js";
+// import TotalBalence from "../components/TotalBalence.js";
 // import { v4 as uuidv4 } from "uuid";
 
 class UsersList extends React.Component {
@@ -10,19 +12,20 @@ class UsersList extends React.Component {
 
   componentDidMount() {
     console.log(this.props);
-    let { userName } = this.props.match.params;
-
-    let item = this.props.data.find(item => item.userName === userName);
-
-    // this.setState(
-    //   {
-    //     ...item
-    //   }
-    // );
+    let user = this.props.match.params;
+    console.log(user);
+    let item = this.props.data.find(item => item.userName === user.userName);
     console.log(item, "aj");
   }
   render() {
-    return <div>Ashok</div>;
+    // const { users } = this.props;
+    return (
+      <div>
+        {/* <TotalBalence /> */}
+        {/* <h1>{users.userName}</h1> */}
+        <AddTransaction />
+      </div>
+    );
   }
 }
 

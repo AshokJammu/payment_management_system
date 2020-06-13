@@ -11,9 +11,16 @@ export class AddTransaction extends React.Component {
     this.state = {
       text: "",
       amount: 0,
-      id: uuidv4()
+      id: uuidv4(),
+      categories: ""
     };
   }
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
   // onSubmit = e => {
   //   console.log(this.state.amount);
@@ -26,8 +33,8 @@ export class AddTransaction extends React.Component {
   // };
 
   render() {
-    const { text, amount } = this.state;
-    const { addIncome, budget } = this.props;
+    const { text, amount, categories } = this.state;
+    const { category, addIncome, budget } = this.props;
     // console.log(budget);
     // console.log(text);
     const amounts = budget.map(item => item.amount);
@@ -71,6 +78,24 @@ export class AddTransaction extends React.Component {
               aria-describedby="emailHelp"
               placeholder="Enter Amount"
             />
+            <select
+              name="categories"
+              onChange={this.handleChange}
+              id=""
+              style={{ padding: 10, margin: 30 }}
+            >
+              <option value="">None</option>
+              {category.map(item => (
+                <option key={item.userName}>{item.categoryName}</option>
+              ))}
+              {/* {category?.map(item => (
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item font-weight-bold" key={uuidv4()}>
+                {item.categoryName}
+              </li>
+            </ul>
+          ))} */}
+            </select>
             <small className="form-text text-muted">
               (-) is for Expense & (+) is for Income
             </small>
@@ -113,6 +138,18 @@ export class AddTransaction extends React.Component {
                     <>
                       <div>
                         {/* <p className="text-success">{item.text}</p> */}
+                        <p className="text-primary"> {item.categories}</p>
+                      </div>
+                    </>
+                  ))}
+                </span>
+              </p>
+              <p className="display-5">
+                <span className="text-info">
+                  {budget?.map(item => (
+                    <>
+                      <div>
+                        {/* <p className="text-success">{item.text}</p> */}
                         <p className="text-primary"> {item.amount}$</p>
                       </div>
                     </>
@@ -128,7 +165,8 @@ export class AddTransaction extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  budget: state.budget
+  budget: state.budget,
+  category: state.category
 });
 const mapDispatchToProps = dispatch => ({
   addIncome: payload => dispatch(addIncome(payload))

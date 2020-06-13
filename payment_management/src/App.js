@@ -16,7 +16,7 @@ export default function App() {
       <Provider store={store}>
         <div className="App">
           <h1 className="row d-flex justify-content-center mt-3">
-            Expense Manager
+            Payment management system
           </h1>
           <Navbar />
           <Routes />

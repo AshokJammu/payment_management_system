@@ -5,3 +5,28 @@
 }
 /* .BgClr {
 } */
+
+/* html, */
+/* body {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+} */
+/* #root {
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.chart {
+  overflow: visible;
+}
+.chart rect {
+  fill: gold;
+}
+.chart rect:hover {
+  fill: crimson;
+}
+.chart text {
+  fill: #333;
+  font: 16px sans-serif;
+} */

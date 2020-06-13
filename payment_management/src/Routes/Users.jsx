@@ -30,7 +30,7 @@ export class Users extends React.Component {
           style={{ padding: 10 }}
           onClick={() => addUser(this.state)}
         >
-          AddProduct
+          AddUser
         </button>
 
         <div style={{ marginTop: 30 }}>

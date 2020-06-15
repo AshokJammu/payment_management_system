@@ -2,8 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { addIncome } from "../redux/action";
 import { v4 as uuidv4 } from "uuid";
-// import { useDispatch } from "react-redux";
-// import { useState } from "react";
 
 export class AddTransaction extends React.Component {
   constructor(props) {
@@ -24,7 +22,7 @@ export class AddTransaction extends React.Component {
   };
 
   render() {
-    const { text, amount, categories, date } = this.state;
+    const { text, amount, date } = this.state;
     const { category, addIncome, budget } = this.props;
     // console.log(budget);
     // console.log(text);
@@ -117,14 +115,50 @@ export class AddTransaction extends React.Component {
             className="row d-flex justify-content-center"
             style={{ padding: 20 }}
           >
-            <div className="col-sm-8 d-flex justify-content-around">
+            <table className="table table-striped table-dark mt-3">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Categories</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Day</th>
+                  {/* <th scope="col">Category</th> */}
+                </tr>
+              </thead>
+              <tbody>
+                {budget &&
+                  budget.map((item, index) => {
+                    return (
+                      <tr key={uuidv4()}>
+                        <th scope={index + 1}>1</th>
+                        <td>{item.categories}</td>
+                        <td>{item.amount}</td>
+                        <td
+                          className={
+                            item.text === "Expense"
+                              ? "text-danger"
+                              : "text-success"
+                          }
+                        >
+                          {item.text}
+                        </td>
+                        <td>{item.date}</td>
+                        {/* <td>{item.Category}</td> */}
+                      </tr>
+                    );
+                  })}
+              </tbody>
+            </table>
+
+            {/* <div className="col-sm-8 d-flex justify-content-around">
               <p className="display-5 text-muted" />
               spends
               <span className="text-info">
                 {budget?.map(item => (
                   <>
                     <div>
-                      {/* <p className="text-success">{item.text}</p> */}
+                      <p className="text-success">{item.text}</p>
                       <p className="text-primary"> {item.text}</p>
                     </div>
                   </>
@@ -135,7 +169,7 @@ export class AddTransaction extends React.Component {
                   {budget?.map(item => (
                     <>
                       <div>
-                        {/* <p className="text-success">{item.text}</p> */}
+                        <p className="text-success">{item.text}</p>
                         <p className="text-primary"> {item.categories}</p>
                       </div>
                     </>
@@ -147,7 +181,7 @@ export class AddTransaction extends React.Component {
                   {budget?.map(item => (
                     <>
                       <div>
-                        {/* <p className="text-success">{item.text}</p> */}
+                        <p className="text-success">{item.text}</p>
                         <p className="text-primary"> {item.amount}$</p>
                       </div>
                     </>
@@ -159,14 +193,14 @@ export class AddTransaction extends React.Component {
                   {budget?.map(item => (
                     <>
                       <div>
-                        {/* <p className="text-success">{item.text}</p> */}
+                        <p className="text-success">{item.text}</p>
                         <p className="text-primary"> {item.date}</p>
                       </div>
                     </>
                   ))}
                 </span>
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

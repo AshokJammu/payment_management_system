@@ -27,11 +27,15 @@ export class AddTransaction extends React.Component {
     // console.log(budget);
     // console.log(text);
     const amounts = budget.map(item => item.amount);
+    const amos = budget.map(item =>
+      item.text === "Expense" ? "text-danger" : "text-success"
+    );
+    console.log(amos);
     //amounts = Number(amounts);
     const total = amounts.reduce((acc, item) => (acc += Number(item)), 0);
     console.log(total, "total");
     return (
-      <div className="row d-flex justify-content-center mt-3">
+      <div className="row d-flex bg-dark justify-content-center mt-3">
         <div
           className="col-sm-6"
           style={{
@@ -40,10 +44,10 @@ export class AddTransaction extends React.Component {
             borderTop: "5px solid #568265"
           }}
         >
-          <h3 className="row d-flex justify-content-center mt-3">
+          <h3 className="row d-flex text-light justify-content-center mt-3">
             Total Amount {total}$
           </h3>
-          <div className="form-group">
+          <div className="form-group text-light">
             <label htmlFor="">Select category</label>
             <select
               name="categories"
@@ -60,9 +64,9 @@ export class AddTransaction extends React.Component {
               ))}
             </select>
           </div>
-          <div className="form-group">
-            <label htmlFor="">Text</label>
-            <input
+          <div className="form-group text-light">
+            <label htmlFor="" />
+            {/* <input
               type="text"
               value={text}
               // onChange={e => setText(e.target.value)}
@@ -70,12 +74,24 @@ export class AddTransaction extends React.Component {
               className="form-control"
               aria-describedby="emailHelp"
               placeholder="Enter Text"
-            />
-            <small className="form-text text-muted">
+            /> */}
+            <select
+              type="text"
+              value={text}
+              // onChange={e => setText(e.target.value)}
+              onChange={e => this.setState({ text: e.target.value })}
+              className="form-control"
+              aria-describedby="emailHelp"
+              placeholder="Enter Text"
+            >
+              <option>Income</option>
+              <option>Expense</option>
+            </select>
+            <small className="form-text text-muted text-light">
               Provide Your area of Income or Expense
             </small>
           </div>
-          <div className="form-group">
+          <div className="form-group text-light">
             <label htmlFor="">Amount</label>
             <input
               type="number"
@@ -91,7 +107,7 @@ export class AddTransaction extends React.Component {
             </small>
           </div>
 
-          <div className="form-group">
+          <div className="form-group text-light">
             <label htmlFor="">Date</label>
             <input
               type="date"

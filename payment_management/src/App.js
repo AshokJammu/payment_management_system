@@ -6,8 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 import store from "./redux/store";
 import Navbar from "./Routes/Navbar";
 import Routes from "./Routes/Routes";
-import LineDemo from "./components/LineDemo";
+// import LineDemo from "./components/LineDemo";
 import Footer from "./Routes/Footer";
+import Chart from "./components/Chart";
 // import BarChart from "./components/BarChart";
 export default function App() {
   console.log(store.getState());
@@ -21,13 +22,14 @@ export default function App() {
           </h1>
           <Navbar />
           <Routes />
-          <div className="row">
+          <Chart />
+          {/* <div className="row">
             <div className="col-4">
               <LineDemo />
             </div>
             <div className="col-4" />
-            {/* <BarChart /> */}
-          </div>
+            <BarChart />
+          </div> */}
           <Footer />
         </div>
       </Provider>

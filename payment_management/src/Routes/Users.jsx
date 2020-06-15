@@ -16,6 +16,7 @@ export class Users extends React.Component {
     return (
       <div style={{ padding: 50 }}>
         <input
+          className="text-light bg-dark"
           style={{ padding: 10 }}
           type="text"
           value={userName}
@@ -40,7 +41,7 @@ export class Users extends React.Component {
         </div>
 
         <div className="card">
-          <div className="card-header">UserList</div>
+          <div className="card-header bg-dark text-light">UserList</div>
           {users?.map(item => (
             <ul className="list-group list-group-flush">
               <li className="list-group-item font-weight-bold" key={uuidv4()}>

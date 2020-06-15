@@ -21,25 +21,33 @@ export class Home extends React.Component {
     const { user } = this.state;
     // console.log(users.userName, "12");
     return (
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
-        <select
-          name="user"
-          onChange={this.handleChange}
-          id=""
-          style={{ padding: 10, margin: 30 }}
-        >
-          <option value="">None</option>
-          {users.map(item => (
-            <option key={item.userName}>{item.userName}</option>
-          ))}
-        </select>
-        <br />
-        <br />
+      <>
+        <h1>Select users</h1>
+        <div className="input-group mb-3">
+          <select
+            className="custom-select   text-dark"
+            name="user"
+            onChange={this.handleChange}
+            id=""
+            style={{ padding: 1, margin: 30 }}
+          >
+            <option value="">None</option>
+            {users.map(item => (
+              <option key={item.userName}>{item.userName}</option>
+            ))}
+          </select>
+          <br />
+          <br />
 
-        <Link style={{ padding: 10, margin: 30 }} to={`/users/${user}`}>
-          Show
-        </Link>
-      </div>
+          <Link
+            className="input-group-text bg-dark text-light"
+            style={{ padding: 10, margin: 25 }}
+            to={`/users/${user}`}
+          >
+            Show
+          </Link>
+        </div>
+      </>
     );
   }
 }

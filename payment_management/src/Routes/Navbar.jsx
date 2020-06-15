@@ -5,15 +5,23 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-light bg-light justify-content-center">
+      <nav className="navbar navbar-light bg-dark justify-content-center ">
         <div style={{ display: "flex" }}>
-          <Link className="navbar-brand" style={{ flex: 1 }} to="/">
+          <Link className="navbar-brand text-light" style={{ flex: 1 }} to="/">
             HOME
           </Link>
-          <Link className="navbar-brand" style={{ flex: 1 }} to="/users">
+          <Link
+            className="navbar-brand text-light"
+            style={{ flex: 1 }}
+            to="/users"
+          >
             USERS
           </Link>
-          <Link className="navbar-brand" style={{ flex: 1 }} to="/category">
+          <Link
+            className="navbar-brand text-light"
+            style={{ flex: 1 }}
+            to="/category"
+          >
             CATEGORY
           </Link>
         </div>

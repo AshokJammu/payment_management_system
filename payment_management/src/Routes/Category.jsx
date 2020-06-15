@@ -16,6 +16,7 @@ export class Category extends React.Component {
     return (
       <div style={{ padding: 50 }}>
         <input
+          className="text-light bg-dark"
           style={{ padding: 10 }}
           type="text"
           value={categoryName}
@@ -43,7 +44,7 @@ export class Category extends React.Component {
         </div>
 
         <div className="card">
-          <div className="card-header">CategoryList</div>
+          <div className="card-header bg-dark text-light">CategoryList</div>
           {category?.map(item => (
             <ul className="list-group list-group-flush">
               <li className="list-group-item font-weight-bold" key={uuidv4()}>

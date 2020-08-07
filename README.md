@@ -6,6 +6,7 @@ This project was bootstrapped with Create React App.
 Available Scripts
 In the project directory, you can run:
 
+<img src="https://miro.medium.com/max/700/1*834tenJNFqOtVygZdXvn4g.png" />
 npm start
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.

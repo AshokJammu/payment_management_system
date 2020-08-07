@@ -1,60 +1,44 @@
 Payment management system:
 A site where User can should be able to add expense or income against some pre filled categories or add a new category and add multiple users.
 
-This project was bootstrapped with Create React App.
+This project was created  with  React[Create React App](https://github.com/facebook/create-react-app).
 
-Available Scripts
-In the project directory, you can run:
+ 
+## Overview of The Project:
+Payment Mangement System is simple expense manager which allow user to keep track of their expenditure.
+<br>
+<br>
 
-<img src="https://miro.medium.com/max/700/1*834tenJNFqOtVygZdXvn4g.png" />
-npm start
+<p><img src="https://miro.medium.com/max/700/1*834tenJNFqOtVygZdXvn4g.png" /></p>
+
+To get started and know better here is the list of the features build inside this application
+
+1.Option to add Multiple users.
+<p> <img src  = "https://miro.medium.com/max/700/1*P65V5b481jZicNCE4znPCw.png"> </p>
+
+2.Option to add Multiple Categories
+<p> <img src  = "https://miro.medium.com/max/700/1*1E2lqUt_aHmUqklq2jeB9A.png"> </p>
+
+3.User can see his payment history
+<p> <img src  = "https://miro.medium.com/max/700/1*nNlXuyivfPMgjefRU1zTIQ.png"> </p>
+
+4.Users can get the monthly and weekly Report of their expenses.
+<p> <img src  = "https://miro.medium.com/max/700/1*lRF33amUb78GbKbnA06oDg.png"> </p>
+
+
+# Follow the below steps:
+
+Follow this simple steps to start using this application
+
+1. Clone the payment management system repo to your home directory and run below commands one by one.
+
+2. npm install
+
+3. npm install react-vis
+
+4. npm start
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
 
-npm test
-Launches the test runner in the interactive watch mode.
-See the section about running tests for more information.
-
-npm run build
-Builds the app for production to the build folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
-
-See the section about deployment for more information.
-
-npm run eject
-Note: this is a one-way operation. Once you eject, you can’t go back!
-
-If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-Learn More
-You can learn more in the Create React App documentation.
-
-To learn React, check out the React documentation.
-
-Code Splitting
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-Analyzing the Bundle Size
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-Making a Progressive Web App
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-Advanced Configuration
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-Deployment
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-npm run build fails to minify
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ 
